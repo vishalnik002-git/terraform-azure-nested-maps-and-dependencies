@@ -1,0 +1,23 @@
+resource_groups = {
+  "rg-web-prod" = {
+    location = "eastus"
+  }
+  "rg-data-prod" = {
+    location = "centralus"
+  }
+}
+
+storage_workloads = {
+  "stwebstaticprod01" = {
+    rg_name      = "rg-web-prod"
+    location     = "eastus"
+    account_tier = "Standard"
+    redundancy   = "LRS"
+  }
+  "stdatapipelinedev01" = {
+    rg_name      = "rg-data-prod"
+    location     = "centralus"
+    account_tier = "Standard"
+    redundancy   = "GRS"
+  }
+}
